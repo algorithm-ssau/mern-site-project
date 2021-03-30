@@ -9,12 +9,15 @@ const PORT = config.get('port') || 5000;
 async function start() {
     try {
         await mongoose.connect(config.get('mongoUri'), {
-            
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
         })
+        app.listen(PORT, () => console.log(`Server hase been started on port ${PORT}...`));
     } catch (e){
         console.log('Server error', e.message);
         process.exit(1);
     }
 }
 
-app.listen(5000, () => console.log(`Server hase been started on port ${PORT}...`));
+start();
