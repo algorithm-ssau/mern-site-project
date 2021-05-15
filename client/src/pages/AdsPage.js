@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const ManePage = () => {
+export const AdsPage = () => {
     return (
         <div>
-            <h1>Main Page</h1>
+            <h1>Ads Page</h1>
         </div>
     )
 }
