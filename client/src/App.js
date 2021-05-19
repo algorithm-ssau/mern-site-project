@@ -1,10 +1,15 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
+import { useRoutes } from "./routes";
 
 function App() {
+  const routes = useRoutes(false);
   return (
-    <div>
-      <header>
+    <Router>
+      <div>
+        {routes}
+        {/* <header>
         <ul className="menu">
           <a className="name">Название сайта</a>
           <a>Создать объявление</a>
@@ -17,8 +22,9 @@ function App() {
       </div>
       <footer>
         <p>Тут какая-то информация и контактики наши будут</p>
-      </footer>
-    </div>
+      </footer> */}
+      </div>
+    </Router>
   );
 }
 
