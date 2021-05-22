@@ -16,7 +16,6 @@ router.post(
   ],
   async (req, res) => {
     try {
-
       const errors = validationResult(req);
 
       if (!errors.isEmpty) {
@@ -37,7 +36,7 @@ router.post(
       }
 
       const hashedPassword = await bcrypt.hash(password, 12);
-      const user = new User({ login, hashedPassword });
+      const user = new User({ login, password: hashedPassword });
 
       await user.save();
 
