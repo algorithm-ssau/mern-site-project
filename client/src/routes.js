@@ -1,7 +1,6 @@
 import React from 'react'
 import {Switch, Route, Redirect} from 'react-router-dom'
 import { AdsPage } from './pages/AdsPage'
-import { MyAdsPage } from './pages/MyAdsPage'
 import { AuthPage } from './pages/AuthPage'
 import { CreatePage } from './pages/CreatePage'
 import { DetailPage } from './pages/DetailPage'
@@ -12,9 +11,6 @@ export const useRoutes = isAutenticated => {
             <Switch>
                 <Route path="/ads" exact>
                     <AdsPage />
-                </Route>
-                <Route path="/myads" exact>
-                    <MyAdsPage />
                 </Route>
                 <Route path="/create" exact>
                     <CreatePage />
