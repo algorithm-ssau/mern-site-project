@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 import { useHttp } from "../hooks/http.hook";
 import { useMessage } from "../hooks/message.hook";
 
 export const AuthPage = () => {
+  const auth = useContext(AuthContext)
   const message = useMessage()
   const { loading, request, error, clearError } = useHttp();
   const [form, setForm] = useState({
@@ -11,7 +13,6 @@ export const AuthPage = () => {
   });
 
   useEffect( () => {
-    console.log("Error", error)
     message(error)
     clearError()
   }, [error, message, clearError] )
@@ -23,38 +24,49 @@ export const AuthPage = () => {
   const registerHandler = async () => {
     try {
       const data = await request("api/auth/register", "POST", { ...form });
-      console.log("Data", data);
+      message(data.message)
+      // console.log("Data", data);
+    } catch (e) {}
+  };
+
+  const loginHandler = async () => {
+    try {
+      const data = await request("api/auth/login", "POST", { ...form });
+      auth.login(data.token, data.userId)
+      // console.log("Data", data);
     } catch (e) {}
   };
 
   return (
-    <div>
+    <div className="auth">
       <h1>Авторизация</h1>
       <div>
         <div>
           <div>
+            <p>Login</p>
             <input
               placeholder="Введите login"
               id="login"
               type="text"
               name="login"
+              value={form.login}
               onChange={changeHandler}
             />
-            <label htmlFor="login">login</label>
           </div>
           <div>
+          <p>Password</p>
             <input
               placeholder="Введите password"
               id="password"
               type="text"
               name="password"
+              value={form.password}
               onChange={changeHandler}
             />
-            <label htmlFor="password">password</label>
           </div>
         </div>
         <div>
-          <button disabled={loading}>Войти</button>
+          <button onClick={loginHandler} disabled={loading}>Войти</button>
           <button onClick={registerHandler} disabled={loading}>
             Регистрация
           </button>
