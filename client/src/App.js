@@ -1,24 +1,33 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
+import { Loader } from "./components/Loader";
+import { Navbar } from "./components/Navbar";
+import { AuthContext } from "./context/AuthContext";
+import { useAuth } from "./hooks/auth.hook";
+import { useRoutes } from "./routes";
+import "materialize-css"
 
 function App() {
+  const {token, login, logout, userId, ready} = useAuth()
+  const isAuthenticated = !!token
+  const routes = useRoutes(isAuthenticated);
+  
+  if(!ready){
+    return <Loader/>
+  }
+
   return (
-    <div>
-      <header>
-        <ul className="menu">
-          <a className="name">Название сайта</a>
-          <a>Создать объявление</a>
-          <a>Найти объявление</a>
-          <a>Вход/регистрация</a>
-        </ul>
-      </header>
-      <div className= "block">
-        <p>Блок контента</p>
+    <AuthContext.Provider value={{
+      token, login, logout, userId, isAuthenticated
+    }}>
+    <Router>
+      { isAuthenticated && <Navbar/>}
+      <div>
+        {routes}
       </div>
-      <footer>
-        <p>Тут какая-то информация и контактики наши будут</p>
-      </footer>
-    </div>
+    </Router>
+    </AuthContext.Provider>
   );
 }
 
