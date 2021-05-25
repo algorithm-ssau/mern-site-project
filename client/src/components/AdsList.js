@@ -14,10 +14,10 @@ export const AdsList = ({ ads }) => {
             <div>
               <p>Бюджет: {ad.budjet} рублей</p>
               <p>Дата публикации: {new Date(ad.date).toLocaleDateString()}</p>
+              <p>
+                <Link to={`/detail/${ad._id}`}>Посмотреть детали</Link>
+              </p>
             </div>
-            <p>
-              <Link to={`/detail/${ad._id}`}>Посмотреть детали</Link>
-            </p>
           </div>
         );
       })}
