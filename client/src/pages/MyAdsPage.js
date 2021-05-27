@@ -26,8 +26,8 @@ export const MyAdsPage = () => {
         return <Loader/>
     }
     return (
-        <>
+        <div className="container">
             {!loading && <AdsList ads={ads}/>}
-        </>
+        </div>
     )
 }

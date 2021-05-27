@@ -3,31 +3,50 @@
     margin: 0;
 }
 
-.navbar {
-    height: 50px;
-  width: 100%;
-  display: inline-flex;
+.container {
+  padding: 30px calc(50% - 590px);
+  
+}
+
+.auth {
+  width: 150pt;
+  height: 100pt;
+  margin: 50px auto 0 auto;
+  padding-right: 100%;
+  display: flex;
   align-items: flex-end;
+  flex-direction: column;
+  line-height: 15pt;
+}
+.auth h1 {
+  margin-bottom: 20pt;
+}
+
+.navbar {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: stretch;
   flex-direction: row;
   justify-content: space-around;
   text-decoration: none;
   }
   
   .navbar li {
-    float: left;
     color: #f2f2f2;
+    align-self: center;
     text-align: center;
     padding: 14px 16px;
-    
     font-size: 17px;
     display: inline;
   }
-
   
   .navbar li:hover {
-    background-color: #ddd;
+    background-color: #eff874;;
     color: black;
     text-decoration: none;
+    border-radius: 3px;
   }
   
   .navbar li.active {
@@ -36,56 +55,104 @@
     text-decoration: none;
   }
 
-  .navbar a, a.active, a.hover{
+  .navbar a, a.active{
     text-decoration: none;
     color: black;
-
   }
 
-  .auth {
-    width:150pt;
-    height: 100pt;
-    margin: 250px auto 0 auto;
-    text-align: center;
+  .navbar li .logo {
+    font-size: 30px;
+    margin-right: 490px;
+  }
+
+  .main {
+    font-size: 18pt;
+    line-height: 30px;
+  }
+
+  .main div {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .main div button {
+    padding: 10px;
+    margin-right: 20px;
   }
 
   .create {
-    width:450pt;
-    height: 250pt;
-    margin: 50px auto 0 auto;
-    text-align: center;
+    width:auto;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .create .create-form h1 {
+    margin-bottom: 10px;
+  }
+  
+  .create .create-form input {
+    margin-bottom: 10px;
+  }
+
+  .create .create-button {
+    margin-top: 10px;
+  }
+
+  .create .create-button button{
+    padding: 10px;
   }
 
   .adcard {
-    height: 50px;
-    width: 400pt;
+    background: #eff874;
+
+    height: auto;
+    width: 600px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-left: 40px;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    margin-top: 40pt;
-    margin: 50px auto 0 auto;
+    align-items: flex-start;
+    border-radius: 5px;
   }
+
   .adcard div{
+    flex-direction: column;
     align-items: flex-end;
-    flex-direction: row;
-    margin-top: 20pt;
   }
 
-  .detailcard {
-    width:250pt;
-    height: 100pt;
-    margin: 50px auto 0 140pt;
-    text-align: left;
-    line-height: 20pt;
+  .adcard .adcard-left {
+    line-height: 30px;
   }
 
-  .detailcard div {
+  .adcard .adcard-right {
+    padding-top: 35px;
+    line-height: 20px;
+  }
+
+  .detail {
+    height: auto;
+    width: 400px;
+    font-size: 15pt;
     display: flex;
-    justify-content: flex-start;
-    text-align: left;
-    align-items: flex-end;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 30px;
   }
 
-  .detailcard div p{
-    margin: 0 5pt;
+  .detail div {
+    width: auto;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid black;
+  }
+
+  .detail button {
+    padding: 10px;
+    margin-right: 20px;
   }

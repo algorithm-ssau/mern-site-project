@@ -26,6 +26,29 @@ router.post("/create", auth, async (req, res) => {
   }
 });
 
+// router.post("/remove", auth, async (req, res) => {
+//   try {
+//     const { title, task, budjet, deadline, contacts } = req.body;
+
+//     const ad = new Ad({
+//       title,
+//       task,
+//       budjet,
+//       deadline,
+//       contacts,
+//       owner: req.user.userId,
+//     });
+//     await ad.save();
+
+//     res.status(201).json({ ad });
+//   } catch (e) {
+    
+//     res
+//       .status(500)
+//       .json({ message: "Что-то пошло не так, попробуйте сноваААААА" });
+//   }
+// });
+
 router.get("/", async (req, res) => {
   try {
     

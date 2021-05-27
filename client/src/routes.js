@@ -4,12 +4,16 @@ import { AdsPage } from './pages/AdsPage'
 import { AuthPage } from './pages/AuthPage'
 import { CreatePage } from './pages/CreatePage'
 import { DetailPage } from './pages/DetailPage'
+import { MainPage } from './pages/MainPage'
 import { MyAdsPage } from './pages/MyAdsPage'
 
 export const useRoutes = isAutenticated => {
     if (isAutenticated) {
         return (
             <Switch>
+                <Route path="/" exact>
+                    <MainPage />
+                </Route>
                 <Route path="/ads" exact>
                     <AdsPage />
                 </Route>
@@ -22,7 +26,7 @@ export const useRoutes = isAutenticated => {
                 <Route path="/detail/:id">
                     <DetailPage />
                 </Route>
-                <Redirect to="/create" />
+                <Redirect to="/" />
             </Switch>
         )
     }

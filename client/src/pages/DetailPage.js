@@ -28,8 +28,9 @@ export const DetailPage = () => {
         return <Loader/>
     }
     return (
-        <>
+        <div className="container">
             { !loading && ad && <AdDetailsCard ad={ad} />}
-        </>
+            
+        </div>
     )
 }
