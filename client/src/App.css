@@ -1,35 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;1,300;1,500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Raleway', sans-serif;
 }
-.menu {
-  height: 50px;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: row;
-  justify-content: space-around;
+
+.container {
+    padding: 30px calc(50% - 590px);
+    height: auto;
 }
-.name {
-    font-size: 24pt;
-    margin-right: 160pt;
+
+.title {
+    margin-bottom: 20px;
 }
-.block {
-    height: 360pt;
-    width: 100%;
-    border: 4px double black;
+
+.auth {
+    width: 170px;
+    height: 180px;
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid black;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    line-height: 20px;
 }
-footer{
+
+.auth h2 {
+    margin-bottom: 10px;
+}
+  
+.auth-form input{
+    margin-bottom: 10px;
+}
+  
+.auth-buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.auth-buttons button {
+    padding: 5px 10px;
+}
+  
+.navbar {
+    height: auto;
     width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+}
+    
+.navbar li {
+      color: #f2f2f2;
+      align-self: center;
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 17px;
+      display: inline;
+}
+    
+.navbar li:hover {
+      background-color: #eff874;;
+      color: black;
+      text-decoration: none;
+      border-radius: 3px;
+}
+    
+.navbar li.active {
+      background-color: #04AA6D;
+      color: white;
+      text-decoration: none;
+}
+  
+.navbar a, a.active {
+      text-decoration: none;
+      color: black;
+}
+  
+.navbar li .logo {
+      font-size: 30px;
+      margin-right: 390px;
+}
+
+footer{
     height: 100px;
+    width: 100%;
+    background: rgb(216, 216, 216);
     position: fixed;
     left: 0;
     bottom: 0;
-    background-color: darkgray;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    font-style: italic;
+}
+
+.main {
+    font-size: 18pt;
+    line-height: 30px;
+}
+
+.main div {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.main div button {
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.create {
+    width:auto;
+    height: auto;
+    margin-left: 40px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.create .create-form h1 {
+    margin-bottom: 10px;
+}
+  
+.create .create-form input {
+    margin-bottom: 10px;
+}
+
+.create .create-button {
+    margin-top: 10px;
+}
+
+.create .create-button button{
+    padding: 10px;
+}
+
+.adcard {
+    background: #eff874;
+
+    height: auto;
+    width: 600px;
+    padding: 20px 40px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 5px;
+}
+
+.adcard div{
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.adcard .adcard-left {
+    line-height: 30px;
+}
+
+.adcard .adcard-right {
+    padding-top: 35px;
+    line-height: 20px;
+}
+
+.detail {
+    height: auto;
+    width: 400px;
+    font-size: 15pt;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 30px;
+}
+
+.detail div {
+    width: auto;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+.detail button {
+    padding: 10px;
+    margin-right: 20px;
 }

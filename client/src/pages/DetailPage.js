@@ -1,4 +1,4 @@
-import React,{ useCallback,useContext,useEffect,useState } from 'react';
+import React,{ useCallback, useContext, useEffect, useState } from 'react';
 import {useParams} from "react-router-dom"
 import { AdDetailsCard } from '../components/AdDetailsCard'
 import { Loader } from '../components/Loader'
