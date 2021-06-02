@@ -16,7 +16,7 @@ ___
 
 1. Клонируйте репозиторий
 ```
-  git clone https://github.com/algorithm-ssau/My-Dev-Blog.git
+  git clone https://github.com/algorithm-ssau/mern-site-project.git
 ```
 2. Установка необходимых модулей
 
