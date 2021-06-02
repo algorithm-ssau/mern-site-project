@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 import { useHistory } from "react-router";
 
 export const MainPage = () => {
-  const history = useHistory()
+    const history = useHistory()
 
   const createHandler = () => {
     try {
@@ -18,11 +18,13 @@ export const MainPage = () => {
   return (
     <div className="container main">
       <p>
-        Ты студент и не понимаешь предмет или нет свободного времени?
+        Студент и не понимаешь предмет или нет свободного времени?
         <br />
-        Освободи себя от выполнения лабораторных работ!
+        Или у ты гений и у тебя свободного времени как мозгов?
         <br />
-        Размести объявление на нашем сервисе и пусть работу сделают за тебя!
+        Освободи себя или освободи других от выполнения лабораторных работ!
+        <br />
+        Размести объявление на нашем сервисе!
       </p>
       <div>
         <button onClick={createHandler}>

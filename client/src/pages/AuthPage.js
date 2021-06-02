@@ -12,10 +12,10 @@ export const AuthPage = () => {
     password: "",
   });
 
-  useEffect(() => {
+  useEffect( () => {
     message(error);
     clearError();
-  }, [error, message, clearError]);
+  }, [error, message, clearError] );
 
   const changeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -39,21 +39,26 @@ export const AuthPage = () => {
 
   return (
     <div className="container">
-      <h1>
+      <h1 className="title">
+        Купи лабу!
+      </h1>
+      <h2>
         Студент и не понимаешь предмет или нет свободного времени?
         <br />
-        Освободи себя от выполнения лабораторных работ!
+        Или у ты гений и у тебя свободного времени как мозгов?
+        <br />
+        Освободи себя или освободи других от выполнения лабораторных работ!
         <br />
         Размести объявление на нашем сервисе!
-      </h1>
+      </h2>
       <div className="auth">
-        <h1>Авторизация</h1>
+        <h2>Авторизация</h2>
         <div>
-          <div>
+          <div className="auth-form">
             <div>
-              <p>Login</p>
+              <p>Логин</p>
               <input
-                placeholder="Введите login"
+                placeholder="Введите логин"
                 id="login"
                 type="text"
                 name="login"
@@ -62,18 +67,18 @@ export const AuthPage = () => {
               />
             </div>
             <div>
-              <p>Password</p>
+              <p>Пароль</p>
               <input
-                placeholder="Введите password"
+                placeholder="Введите пароль"
                 id="password"
-                type="text"
+                type="password"
                 name="password"
                 value={form.password}
                 onChange={changeHandler}
               />
             </div>
           </div>
-          <div>
+          <div className="auth-buttons">
             <button onClick={loginHandler} disabled={loading}>
               Войти
             </button>

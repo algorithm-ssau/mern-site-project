@@ -7,6 +7,7 @@ import { AuthContext } from "./context/AuthContext";
 import { useAuth } from "./hooks/auth.hook";
 import { useRoutes } from "./routes";
 import "materialize-css"
+import { Footer } from "./components/Footer";
 
 function App() {
   const {token, login, logout, userId, ready} = useAuth()
@@ -26,8 +27,10 @@ function App() {
       <div>
         {routes}
       </div>
+      { !isAuthenticated && <Footer/>}
     </Router>
     </AuthContext.Provider>
+
   );
 }
 
